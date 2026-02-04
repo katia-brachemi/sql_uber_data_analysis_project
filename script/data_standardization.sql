@@ -1,6 +1,6 @@
 /* 
 ===========================================================
- Script: UBER Setup
+ Script: Data Standardization
 ===========================================================
    Purpose: 
      - Check the Booking table schema
