@@ -14,6 +14,7 @@ Purpose: Data Analysis
  - Highest booking value 
  - Most used payment method
  - Most frequent pickup/drop route
+ - Overall performance metrics: Total bookings, Completed rides, Customer cancellations and Driver cancellations
 
 SQL Functions/Objects Used:
 - SELECT 
@@ -62,4 +63,25 @@ SELECT TOP 5 pickup_location, drop_location, COUNT(*) AS RideCount
 FROM Booking
 GROUP BY pickup_location, drop_location
 ORDER BY RideCount DESC;
+
+
+-- Overall booking performance metrics
+SELECT 
+    COUNT(*) AS total_bookings,
+    SUM(CASE WHEN CAST(incomplete_rides AS INT) = 0 
+              AND CAST(cancelled_by_customer AS INT) = 0 
+              AND CAST(cancelled_by_driver AS INT) = 0 
+             THEN 1 ELSE 0 END) AS completed_rides,
+    SUM(CAST(cancelled_by_customer AS INT)) AS customer_cancellations,
+    SUM(CAST(cancelled_by_driver AS INT)) AS driver_cancellations,
+    
+    -- Percentages
+    CAST(SUM(CASE WHEN CAST(incomplete_rides AS INT) = 0 
+                  AND CAST(cancelled_by_customer AS INT) = 0 
+                  AND CAST(cancelled_by_driver AS INT) = 0 
+             THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS DECIMAL(5,2)) AS success_rate,
+    CAST(SUM(CAST(cancelled_by_customer AS INT)) * 100.0 / COUNT(*) AS DECIMAL(5,2)) AS customer_cancel_rate,
+    CAST(SUM(CAST(cancelled_by_driver AS INT)) * 100.0 / COUNT(*) AS DECIMAL(5,2)) AS driver_cancel_rate
+FROM Booking;
+
 
