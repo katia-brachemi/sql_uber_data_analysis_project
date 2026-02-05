@@ -8,7 +8,7 @@ Script : Data Cleaning
      - Handle NULL values by replacing with defaults (0 or 'Unknown')
      - Remove duplicate bookings (keep first occurrence)
      - Standardize misleading values ('null' → 'Unknown' / 'Not cancelled')
-     - Round numeric values for consistency (distance, ratings)
+     - Round numeric values for consistency (avg_vtat, avg_ctat,distance, ratings)
  
 SQL Functions/Objects Used:
      - ALTER TABLE, UPDATE, DELETE, SELECT
@@ -140,8 +140,9 @@ WHERE incomplete_reason = 'null';
 
 
 UPDATE Booking
-SET ride_distance   = ROUND(ride_distance, 2),
+SET avg_vtat        = ROUND(avg_vtat,2),
+    avg_ctat        = ROUND(avg_ctat,2),
+    ride_distance   = ROUND(ride_distance, 2),
     driver_rating   = ROUND(driver_rating, 1),
     customer_rating = ROUND(customer_rating, 1);
-
 
