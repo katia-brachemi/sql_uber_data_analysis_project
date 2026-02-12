@@ -25,6 +25,22 @@ It provides visibility into booking activity, trip outcomes, payment preferences
 - Top 5 most frequent routes  
 - Overall performance metrics (totals and percentages)
 
+## Tableau Dashboard
+
+After cleaning and analyzing the Uber booking dataset with SQL, I built an interactive Tableau dashboard to visualize key insights.
+- **KPIs**: Total Revenue, % Completed, % Cancelled
+- **Trend Analysis**: Bookings Count trend over months
+- **Customer Behavior**: Ratings by vehicle type, cancellation reasons
+- **Revenue Insights**: Payment method distribution
+
+📊 [View the interactive dashboard on Tableau Public](https://public.tableau.com/app/profile/katia.brachemi/viz/Uber_17708919274750/Dashboard1).
+
+### Dashboard Preview
+![Dashboard Overview]
+![Bookings Trend]
+![Customer Ratings]
+![Cancellation Reasons]
+![Payment Methods]
 
 ## 🛠️ Tools & Technologies
 - **SQL Server (T‑SQL)** → Data preparation and analysis  
