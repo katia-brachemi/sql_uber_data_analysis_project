@@ -25,6 +25,7 @@ It provides visibility into booking activity, trip outcomes, payment preferences
 - Top 5 most frequent routes  
 - Overall performance metrics (totals and percentages)
 
+
 ## Tableau Dashboard
 
 After cleaning and analyzing the Uber booking dataset with SQL, I built an interactive Tableau dashboard to visualize key insights.
@@ -36,11 +37,12 @@ After cleaning and analyzing the Uber booking dataset with SQL, I built an inter
 📊 [View the interactive dashboard on Tableau Public](https://public.tableau.com/app/profile/katia.brachemi/viz/Uber_17708919274750/Dashboard1).
 
 ### Dashboard Preview
-![Dashboard Overview]
-![Bookings Trend]
-![Customer Ratings]
-![Cancellation Reasons]
-![Payment Methods]
+![Dashboard Overview](visualizations/dashboard_overview.png).
+![Bookings Trend](visualizations/bookings_trend.png).
+![Customer Ratings](visualizations/customer_ratings.png).
+![Cancellation Reasons](visualizations/cancellation_reasons.png).
+![Payment Methods](visualizations/payment_methods.png).
+
 
 ## 🛠️ Tools & Technologies
 - **SQL Server (T‑SQL)** → Data preparation and analysis  
